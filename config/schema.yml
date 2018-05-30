@@ -1,0 +1,28 @@
+connection:      propel
+noXsd:           false
+defaultIdMethod: native
+package:         plugins.cpAwsPropelPlugin.lib.model
+
+classes:
+  S3Object:
+    tableName:           s3object
+    columns:
+      id:                { type: integer, required: true, primaryKey: true, autoIncrement: true }
+      type:              { type: integer, required: true }
+      title:             { type: varchar, size: 100, required: false }
+      description:       { type: longvarchar, required: false }
+      bucket:            { type: varchar, size: 255, required: true }
+      path:              { type: longvarchar, required: true }
+      credentials:       { type: varchar, size: 100, required: false }
+      preauth:           { type: varchar, size: 100, required: false, default: '5 minutes' }
+      original_filename: { type: longvarchar, required: true }
+      size:              { type: integer, required: true }
+    propel_behaviors:
+      timestampable:
+        create_column:   created_at
+        update_column:   updated_at
+    inheritance:
+      column:            type
+      classes:         
+        1: S3Document
+        2: S3Image

@@ -1,0 +1,17 @@
+{
+    "name": "cooperspeele/cp-aws-propel-plugin",
+    "type": "symfony1-plugin",
+    "description": "",
+    "keywords": ["symfony", "plugin"],
+    "license": "MIT",
+    "homepage": "https://github.com/cooperspeele/cpAwsPropelPlugin",
+    "require": {
+        "amazonwebservices/aws-sdk-for-php": "^1.6",
+        "composer/installers": "*"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
